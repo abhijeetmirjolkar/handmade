@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Index Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #2d3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .intro {
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .product-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+        .product-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .product-item p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        .product-item button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        .product-item button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Our Product Store</h1>
+    </header>
+
+    <section class="intro">
+        <p>Welcome to our online store! We offer a variety of high-quality products to meet your needs. Browse through our collection and find something perfect for you!</p>
+    </section>
+
+    <section class="product-list">
+        <div class="product-item">
+            <h3>Product 1</h3>
+            <p>A description of product 1 goes here. It’s a fantastic product that you’ll love!</p>
+            <button>View Details</button>
+        </div>
+        <div class="product-item">
+            <h3>Product 2</h3>
+            <p>A description of product 2 goes here. Another great option for your needs.</p>
+            <button>View Details</button>
+        </div>
+        <div class="product-item">
+            <h3>Product 3</h3>
+            <p>A description of product 3 goes here. Perfect for those who want the best!</p>
+            <button>View Details</button>
+        </div>
+        <div class="product-item">
+            <h3>Product 4</h3>
+            <p>A description of product 4 goes here. Durable and reliable, a great choice!</p>
+            <button>View Details</button>
+        </div>
+    </section>
+
+</body>
+</html>
