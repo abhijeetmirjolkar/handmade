@@ -4,106 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Product Index Page</title>
+    <title>Product Catalog</title>
     <style>
+        /* Basic CSS Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #f9f9f9;
         }
+
         header {
-            background-color: #2d3e50;
-            color: #fff;
-            padding: 20px;
+            background-color: #333;
+            color: white;
             text-align: center;
+            padding: 15px 0;
         }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
         }
-        .intro {
-            padding: 20px;
-            background-color: #fff;
-            text-align: center;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .product-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 0 20px;
-        }
-        .product-item {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .product-item:hover {
-            transform: scale(1.05);
-        }
-        .product-item h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-        .product-item p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            color: #666;
-        }
-        .product-item button {
-            background-color: #3498db;
-            color: #fff;
-            border: none;
+
+        nav a {
+            color: white;
             padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 1em;
+            text-decoration: none;
         }
-        .product-item button:hover {
-            background-color: #2980b9;
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .catalog-filter {
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .filter-group {
+            margin-right: 20px;
+        }
+
+        .catalog-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+            border-radius: 8px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .product-card .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .pagination a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+        }
+
+        .pagination a:hover {
+            background-color: #575757;
+            color: white;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Welcome to Our Product Store</h1>
+        <h1>Product Catalog</h1>
     </header>
 
-    <section class="intro">
-        <p>Welcome to our online store! We offer a variety of high-quality products to meet your needs. Browse through our collection and find something perfect for you!</p>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section class="catalog-filter">
+        <div class="filter-group">
+            <label for="category">Category:</label>
+            <select id="category">
+                <option value="all">All</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="home">Home</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="price">Price Range:</label>
+            <select id="price">
+                <option value="all">All</option>
+                <option value="0-50">$0 - $50</option>
+                <option value="50-100">$50 - $100</option>
+                <option value="100+">$100+</option>
+            </select>
+        </div>
     </section>
 
-    <section class="product-list">
-        <div class="product-item">
-            <h3>Pet Feeder</h3>
-            <p>A description of product 1 goes here. It’s a fantastic product that you’ll love!</p>
-            <a href="PetFeeder.html">
-            <button>View Details</button>
+    <section class="catalog-section">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Description of Product 1. Great for daily use.</p>
+            <div class="price">$29.99</div>
         </div>
-        <div class="product-item">
-            <h3>Quick Test</h3>
-            <p>A description of product 2 goes here. Another great option for your needs.</p>
-            <button>View Details</button>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Description of Product 2. Durable and stylish.</p>
+            <div class="price">$49.99</div>
         </div>
-        <div class="product-item">
-            <h3>In progress</h3>
-            <p>A description of product 3 goes here. Perfect for those who want the best!</p>
-            <button>View Details</button>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>Description of Product 3. High performance.</p>
+            <div class="price">$79.99</div>
         </div>
-        <div class="product-item">
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Product 4">
             <h3>Product 4</h3>
-            <p>A description of product 4 goes here. Durable and reliable, a great choice!</p>
-            <button>View Details</button>
+            <p>Description of Product 4. Affordable and reliable.</p>
+            <div class="price">$59.99</div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Product 5">
+            <h3>Product 5</h3>
+            <p>Description of Product 5. Excellent quality.</p>
+            <div class="price">$99.99</div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Product 6">
+            <h3>Product 6</h3>
+            <p>Description of Product 6. Great for your needs.</p>
+            <div class="price">$39.99</div>
         </div>
     </section>
+
+    <section class="pagination">
+        <a href="#">Previous</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">Next</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Product Catalog | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+    </footer>
 
 </body>
 </html>
